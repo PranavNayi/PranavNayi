@@ -33,7 +33,7 @@ I am always working on something new, so be sure to check back later!
 
 ## 📈 GitHub Stats
 
-![Your GitHub Stats]https://github-readme-stats.vercel.app/api?PranavNayi=your-PranavNayi&show_icons=true&hide_title=true&count_private=true&hide=prs&theme=transparent
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?pranavnayi=anuraghazra&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 ## 📫 How to Reach Me
 
