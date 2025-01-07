@@ -2,8 +2,7 @@
 
 Welcome to my GitHub profile! I'm a first-year student passionate about programming, problem-solving, and learning new technologies. I’m currently exploring different fields like software development, data science, web development, and more. Feel free to explore my repositories, and don't hesitate to reach out if you want to collaborate or discuss any project!
 
-## 🚀 My GitHub Stats
-![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=PranavNayi&show_icons=true&count_private=true&hide_title=true&hide=prs&theme=white&border_color=white&border_width=10&icon_color=white&bg_color=000000)
+![PranavNayi's Stats](https://github-readme-stats.vercel.app/api?username=PranavNayi&theme=midnight-purple&show_icons=true&hide_border=false&count_private=true)
 
 ## 🚀 About Me
 
