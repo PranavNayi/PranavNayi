@@ -50,23 +50,31 @@ public static void main(String []args) throws LineUnavailableException
                                 f[j].printData();
                             }
                             break;
-                        //case 3 :
-                        //    f[i].find();
-                        //    break;
+                       // case 3 :
+                          // f[i].find();
+                           ///break;
                        
-                        case 4 :
-                            System.out.println("ok tata bye bye babai");
-                            try {
-                                File file = new File("C:\\JAVA\\sad-meow-song.wav");
-                                AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-                                Clip clip = AudioSystem.getClip();
-                                clip.open(audioStream);
-                                clip.start();
-                            } catch (UnsupportedAudioFileException | IOException e) {
-                                e.printStackTrace();
-                                return;
-                            }
-                            return;
+                           case 4:
+                           System.out.println("ok tata bye bye babai");
+                           try {
+                               File file = new File("C:\\JAVA\\sad-meow-song.wav");
+                               AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+                               Clip clip = AudioSystem.getClip();
+                               clip.open(audioStream);
+                               clip.start();
+           
+                               // Keep the program running to allow the clip to play
+                               Thread.sleep(clip.getMicrosecondLength() / 1000);
+                           } catch (UnsupportedAudioFileException e) {
+                               System.out.println("Unsupported audio file: " + e.getMessage());
+                           } catch (IOException e) {
+                               System.out.println("I/O error: " + e.getMessage());
+                           } catch (LineUnavailableException e) {
+                               System.out.println("Line unavailable: " + e.getMessage());
+                           } catch (InterruptedException e) {
+                               System.out.println("Thread interrupted: " + e.getMessage());
+                           }
+                           return;
 
                         default:
                             System.out.println("ak kaaam sarku nai thy chutiya thi sacho no. nake ne tari ma ne");
