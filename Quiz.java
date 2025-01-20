@@ -29,6 +29,7 @@ class details
         System.err.println();
         arr = new details[2];
         System.out.println("   Enter the details of the players");
+
         for(int i=0;i<2;i++)
         {
             arr[i]=new details();
@@ -36,16 +37,25 @@ class details
             arr[i].name=sc.next();
             System.out.print("Enter the user id: ");
             arr[i].id=sc.nextInt();
-            System.out.print("guess a no. 1 or 2: ");
-            arr[i].guess=sc.nextInt();
-        
-            while(arr[i].guess>2 || arr[i].guess<1)
-                {
-                    System.out.print("Enter a valid number,try again:Enter 1 or 2: ");
-                    arr[i].guess=sc.nextInt();
-                }
+            
         }
 
+            System.out.print("first player guess a no. 1 or 2: ");   //to find who will go first
+            arr[0].guess=sc.nextInt();
+        
+            while(arr[0].guess>2 || arr[0].guess<1)
+                {
+                    System.out.print("Enter a valid number,try again:Enter 1 or 2: ");
+                    arr[0].guess=sc.nextInt();
+                }
+                if(arr[0].guess==1)
+                {
+                    arr[1].guess=2;
+                }
+                else
+                {
+                    arr[1].guess=1;
+                }
         // Generate a random number between 1 and 2
         random1 = (int) (Math.random() * 2) + 1;
         System.out.println("-----------------> Random number generated: " + random1);
@@ -61,6 +71,7 @@ class details
             System.out.println("-------------->  "+arr[1].name+" will go first");
         }
     }
+    
     void Quation()
     {
         int count1=0,count2=0;
@@ -71,10 +82,11 @@ class details
         {
             if(p1==random1)
             {
-                p2=random1;
+                    p1= random1+1;
+                    p2=random1;
                 while (count1 <5)
                 {
-                p1++;
+                    
                 
                     // Generate a random number between 1 to 20
                     random2 = (int) (Math.random() * 20) + 1;
@@ -84,7 +96,7 @@ class details
                         case 1:
                             System.out.println("Who is known as the Father of the Nation in India?");
                             ans1 = sc.next();
-                            if(ans1.equals("mahatma gandhi"))
+                            if(ans1.equalsIgnoreCase("mahatma gandhi"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -99,7 +111,7 @@ class details
                         case 2:
                            System.out.println("What is the national animal of India?");
                             ans2 = sc.next();
-                            if(ans2.equals("tiger"))
+                            if(ans2.equalsIgnoreCase("tiger"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -113,7 +125,7 @@ class details
                         case 3:
                            System.out.println("What is the national bird of India?");
                             ans3 = sc.next();
-                            if(ans3.equals("peacock"))
+                            if(ans3.equalsIgnoreCase("peacock"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -127,7 +139,7 @@ class details
                         case 4:
                            System.out.println("What is the national flower of India?");
                             ans4 = sc.next();
-                            if(ans4.equals("lotus"))
+                            if(ans4.equalsIgnoreCase("lotus"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -141,7 +153,7 @@ class details
                         case 5:
                            System.out.println("What is the national fruit of India?");
                             ans5 = sc.next();
-                            if(ans5.equals("mango"))
+                            if(ans5.equalsIgnoreCase("mango"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -155,7 +167,7 @@ class details
                         case 6:
                            System.out.println("Who wrote the Indian national anthem?");
                             ans6 = sc.next();
-                            if(ans6.equals("rabindranath tagore"))
+                            if(ans6.equalsIgnoreCase("rabindranath tagore"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -169,7 +181,7 @@ class details
                         case 7:
                            System.out.println("Which is the longest river in India?");
                             ans7 = sc.next();
-                            if(ans7.equals("ganga"))
+                            if(ans7.equalsIgnoreCase("ganga"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -183,7 +195,7 @@ class details
                         case 8:
                            System.out.println("Which Indian city is known as the Pink City?");
                             ans8 = sc.next();
-                            if(ans8.equals("jaipur"))
+                            if(ans8.equalsIgnoreCase("jaipur"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -197,7 +209,7 @@ class details
                         case 9:
                            System.out.println("Which Indian city is known as the Silicon Valley of India?");
                             ans9 = sc.next();
-                            if(ans9.equals("bangalore"))
+                            if(ans9.equalsIgnoreCase("bangalore"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -211,7 +223,7 @@ class details
                         case 10:
                            System.out.println("Which Indian state is known as the Land of Five Rivers?");
                             ans10 = sc.next();
-                            if(ans10.equals("punjab"))
+                            if(ans10.equalsIgnoreCase("punjab"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -225,7 +237,7 @@ class details
                         case 11:
                            System.out.println("In which year was the Battle of Plassey fought?");
                             ans11 = sc.next();
-                            if(ans11.equals("1757"))
+                            if(ans11.equalsIgnoreCase("1757"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -239,7 +251,7 @@ class details
                         case 12:
                                   System.out.println("Who was the first Indian to win a Nobel Prize?");
                             ans12 = sc.next();
-                            if(ans12.equals("rabindranath tagore"))
+                            if(ans12.equalsIgnoreCase("rabindranath tagore"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -253,7 +265,7 @@ class details
                         case 13:
                             System.out.println("Which Indian mathematician is known for his contributions to number theory and continued fractions?");
                             ans13 = sc.next();
-                            if(ans13.equals("srinivasa ramanujan"))
+                            if(ans13.equalsIgnoreCase("srinivasa ramanujan"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -267,7 +279,7 @@ class details
                         case 14:
                             System.out.println("Which Indian state has the highest literacy rate?");
                             ans14 = sc.next();
-                            if(ans14.equals("kerala"))
+                            if(ans14.equalsIgnoreCase("kerala"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -281,7 +293,7 @@ class details
                         case 15:
                             System.out.println("Who was the founder of the Maurya Empire?");
                             ans15 = sc.next();
-                            if(ans15.equals("chandragupta maurya"))
+                            if(ans15.equalsIgnoreCase("chandragupta maurya"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -295,7 +307,7 @@ class details
                         case 16:
                            System.out.println("Which Indian state is known for its tea gardens?");
                             ans16 = sc.next();
-                            if(ans16.equals("assam"))
+                            if(ans16.equalsIgnoreCase("assam"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -309,7 +321,7 @@ class details
                         case 17:
                            System.out.println("Which Indian state is known as the Spice Garden of India?");
                             ans17 = sc.next();
-                            if(ans17.equals("kerala"))
+                            if(ans17.equalsIgnoreCase("kerala"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -323,7 +335,7 @@ class details
                         case 18:
                            System.out.println("Which Indian state is known as the Land of Rising Sun?");
                             ans18 = sc.next();
-                            if(ans18.equals("arunachal pradesh"))
+                            if(ans18.equalsIgnoreCase("arunachal pradesh"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -337,7 +349,7 @@ class details
                         case 19:
                            System.out.println("Which Indian state is known for its backwaters?");
                             ans19 = sc.next();
-                            if(ans19.equals("kerala"))
+                            if(ans19.equalsIgnoreCase("kerala"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -351,7 +363,7 @@ class details
                         case 20:
                            System.out.println("Who was the first President of India?");
                             ans20 = sc.next();
-                            if(ans20.equals("dr. rajendra prasad"))
+                            if(ans20.equalsIgnoreCase("dr. rajendra prasad"))
                             {
                                 System.out.println("Correct answer");
                                 point1++;
@@ -365,10 +377,11 @@ class details
                     }
                     count1++;
                 }
-                System.out.println("Points of "+arr[0].name+" is "+point1);
             }
             if(p2==random1) 
             {
+                p2= random1+1;
+                p1=random1;
                 while (count2 <5)
                 {
                     // Generate a random number between 1 to 20
@@ -379,7 +392,7 @@ class details
                     case 1:
                             System.out.println("Who is known as the Father of the Nation in India?");
                             ans1 = sc.next();
-                            if(ans1.equals("mahatma gandhi"))
+                            if(ans1.equalsIgnoreCase("mahatma gandhi"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -394,7 +407,7 @@ class details
                         case 2:
                            System.out.println("What is the national animal of India?");
                             ans2 = sc.next();
-                            if(ans2.equals("tiger"))
+                            if(ans2.equalsIgnoreCase("tiger"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -408,7 +421,7 @@ class details
                         case 3:
                            System.out.println("What is the national bird of India?");
                             ans3 = sc.next();
-                            if(ans3.equals("peacock"))
+                            if(ans3.equalsIgnoreCase("peacock"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -422,7 +435,7 @@ class details
                         case 4:
                            System.out.println("What is the national flower of India?");
                             ans4 = sc.next();
-                            if(ans4.equals("lotus"))
+                            if(ans4.equalsIgnoreCase("lotus"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -436,7 +449,7 @@ class details
                         case 5:
                            System.out.println("What is the national fruit of India?");
                             ans5 = sc.next();
-                            if(ans5.equals("mango"))
+                            if(ans5.equalsIgnoreCase("mango"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -450,7 +463,7 @@ class details
                         case 6:
                            System.out.println("Who wrote the Indian national anthem?");
                             ans6 = sc.next();
-                            if(ans6.equals("rabindranath tagore"))
+                            if(ans6.equalsIgnoreCase("rabindranath tagore"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -464,7 +477,7 @@ class details
                         case 7:
                            System.out.println("Which is the longest river in India?");
                             ans7 = sc.next();
-                            if(ans7.equals("ganga"))
+                            if(ans7.equalsIgnoreCase("ganga"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -478,7 +491,7 @@ class details
                         case 8:
                            System.out.println("Which Indian city is known as the Pink City?");
                             ans8 = sc.next();
-                            if(ans8.equals("jaipur"))
+                            if(ans8.equalsIgnoreCase("jaipur"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -492,7 +505,7 @@ class details
                         case 9:
                            System.out.println("Which Indian city is known as the Silicon Valley of India?");
                             ans9 = sc.next();
-                            if(ans9.equals("bangalore"))
+                            if(ans9.equalsIgnoreCase("bangalore"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -506,7 +519,7 @@ class details
                         case 10:
                            System.out.println("Which Indian state is known as the Land of Five Rivers?");
                             ans10 = sc.next();
-                            if(ans10.equals("punjab"))
+                            if(ans10.equalsIgnoreCase("punjab"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -520,7 +533,7 @@ class details
                         case 11:
                            System.out.println("In which year was the Battle of Plassey fought?");
                             ans11 = sc.next();
-                            if(ans11.equals("1757"))
+                            if(ans11.equalsIgnoreCase("1757"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -534,7 +547,7 @@ class details
                         case 12:
                                   System.out.println("Who was the first Indian to win a Nobel Prize?");
                             ans12 = sc.next();
-                            if(ans12.equals("rabindranath tagore"))
+                            if(ans12.equalsIgnoreCase("rabindranath tagore"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -548,7 +561,7 @@ class details
                         case 13:
                             System.out.println("Which Indian mathematician is known for his contributions to number theory and continued fractions?");
                             ans13 = sc.next();
-                            if(ans13.equals("srinivasa ramanujan"))
+                            if(ans13.equalsIgnoreCase("srinivasa ramanujan"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -562,7 +575,7 @@ class details
                         case 14:
                             System.out.println("Which Indian state has the highest literacy rate?");
                             ans14 = sc.next();
-                            if(ans14.equals("kerala"))
+                            if(ans14.equalsIgnoreCase("kerala"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -576,7 +589,7 @@ class details
                         case 15:
                             System.out.println("Who was the founder of the Maurya Empire?");
                             ans15 = sc.next();
-                            if(ans15.equals("chandragupta maurya"))
+                            if(ans15.equalsIgnoreCase("chandragupta maurya"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -590,7 +603,7 @@ class details
                         case 16:
                            System.out.println("Which Indian state is known for its tea gardens?");
                             ans16 = sc.next();
-                            if(ans16.equals("assam"))
+                            if(ans16.equalsIgnoreCase("assam"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -604,7 +617,7 @@ class details
                         case 17:
                            System.out.println("Which Indian state is known as the Spice Garden of India?");
                             ans17 = sc.next();
-                            if(ans17.equals("kerala"))
+                            if(ans17.equalsIgnoreCase("kerala"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -618,7 +631,7 @@ class details
                         case 18:
                            System.out.println("Which Indian state is known as the Land of Rising Sun?");
                             ans18 = sc.next();
-                            if(ans18.equals("arunachal pradesh"))
+                            if(ans18.equalsIgnoreCase("arunachal pradesh"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -632,7 +645,7 @@ class details
                         case 19:
                            System.out.println("Which Indian state is known for its backwaters?");
                             ans19 = sc.next();
-                            if(ans19.equals("kerala"))
+                            if(ans19.equalsIgnoreCase("kerala"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -646,7 +659,7 @@ class details
                         case 20:
                            System.out.println("Who was the first President of India?");
                             ans20 = sc.next();
-                            if(ans20.equals("dr. rajendra prasad"))
+                            if(ans20.equalsIgnoreCase("rajendra prasad"))
                             {
                                 System.out.println("Correct answer");
                                 point2++;
@@ -660,7 +673,6 @@ class details
                         }
                     count2++;
                 }
-                System.out.println("Points of "+arr[1].name+" is "+point2);
             }
         }
     }
@@ -673,6 +685,13 @@ class details
             System.out.println(arr[1].name+"'s points are "+point2);
             System.out.println();
             System.out.println(arr[0].name+" is the winner");
+        }
+        else if(point1==point2)
+        {
+            System.out.println(arr[0].name+"'s points are "+point1);
+            System.out.println(arr[1].name+"'s points are "+point2);
+            System.out.println();
+            System.out.println("The game is draw");
         }
         else
         {
